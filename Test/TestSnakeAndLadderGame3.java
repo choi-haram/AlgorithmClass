@@ -4,7 +4,7 @@ package last_nano_test;
 import java.util.Scanner;
 
 public class TestSnakeAndLadderGame3 {
-    static long StartTime = System.nanoTime(); // 클래스 시간 측정
+    static long StartTime = System.nanoTime(); // [test code] 클래스 시간 측정
     static int len;
     static int numberSnake;
     static int numberLadder;
