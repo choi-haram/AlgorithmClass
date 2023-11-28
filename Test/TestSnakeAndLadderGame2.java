@@ -1,10 +1,10 @@
+// 최종 2차 테스트 코드
 package last_nano_test;
 
-// 최종 2차 코드
 import java.util.*;
 
-public class test2 {
-    static long StartTime = System.nanoTime(); // 클래스 시간 측정
+public class TestSnakeAndLadderGame2 {
+    static long StartTime = System.nanoTime(); // [test code] 클래스 시간 측정
     static int row;
     static int column;
     static int numberSnake;
@@ -25,11 +25,11 @@ public class test2 {
         numberSnake = (row * column) / 20; // 전체 크기의 5% 만큼 뱀 생성
         numberLadder = (row * column) / 20; // 전체 크기의 5% 만큼 사다리 생성
 
-        pan = new int[row + 2][column + 1]; // 주사위 굴린 횟수를 계산하기 위한 배열
-        snake_position = new boolean[row + 2][column + 1]; // 뱀 위치 배열
-        snake_prohibit_position = new boolean[row + 2][column + 1]; // 뱀 생성 불가능 한 위치 배열
-        ladder_position = new boolean[row + 2][column + 1]; // 사다리 위치 배열
-        ladder_prohibit_position = new boolean[row + 2][column + 1]; // 사다리 생성 불가능 한 위치 배열
+        pan = new int[row + 1][column + 1]; // 주사위 굴린 횟수를 계산하기 위한 배열. 게임판 1,1 방문시 pan[1][1]에 +1 기록
+        snake_position = new boolean[row + 1][column + 1]; // 뱀 위치 배열
+        snake_prohibit_position = new boolean[row + 1][column + 1]; // 뱀 생성 불가능 한 위치 배열
+        ladder_position = new boolean[row + 1][column + 1]; // 사다리 위치 배열
+        ladder_prohibit_position = new boolean[row + 1][column + 1]; // 사다리 생성 불가능 한 위치 배열
         int now_position_x = 0; // 현재 말의 x 위치
         int now_position_y = 1; // 현재 말의 y 위치
         int a = 1; // [test code]
@@ -43,7 +43,7 @@ public class test2 {
         long WhileStartTime = System.nanoTime(); // [test code] 주사위 던지는 반복문 시간 측정
         while (now_position_y != row + 1) { // 현재 말의 y 위치가 최대 세로 길이를 초과하는 경우
             int dice = (int) (Math.random() * 6 + 1); // 1~6 사이의 주사위 굴리기
-            System.out.println("!!!!!!!"+a+"번째 게임!!!!!!!");
+            System.out.println("!!!!!!!"+a+"번째 게임!!!!!!!"); // [test code]
             System.out.println("주사위 눈 : " + dice);
             a++; // [test code]
 
@@ -89,7 +89,7 @@ public class test2 {
                 cnt += pan[i][j];
             }
         }
-        System.out.println("주사위 굴린 횟수 : " + (cnt + 1)); // 마지막 탈출 할 때 한번 던지는 것...
+        System.out.println("주사위 굴린 횟수 : " + (cnt + 1)); // 마지막 주사위를 던져 나가는 횟수도 계산 해줘야 함
     }
 
     public static void makeSnakePosition() { // 뱀 위치 랜덤 생성 함수
@@ -133,8 +133,8 @@ public class test2 {
                 if(y==1){
                     ladder_position[y][x] = true;
                     ladder_prohibit_position[y+1][x] = true;
-                } else if(y==row) { // 사다리가 맨 위에 있는 열에 생성되는 경우
-                    i--;
+                } else if(y==row) { // 사다리가 맨 위의 줄에 생성되는 경우
+                    i--; // 생성 불가능 하기 때문에 한번 더 생성하도록 함
                 } else {
                     ladder_position[y][x] = true;
                     ladder_prohibit_position[y-1][x] = true;
