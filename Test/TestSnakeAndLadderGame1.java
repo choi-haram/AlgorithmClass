@@ -1,11 +1,11 @@
 package last_nano_test;
-// 최종 1차 코드
+// 최종 1차 테스트 코드
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class test1 {
+public class TestSnakeAndLadderGame1 {
     static long StartTime = System.nanoTime(); // [test code] 클래스 시간 측정
-  
+
     static int row;
     static int column;
     static int numberSnake;
@@ -20,7 +20,7 @@ public class test1 {
 
         row = scanner.nextInt();
         column  = row;
-        pan = new int[row + 2][column + 1]; // 주사위 굴린 횟수를 계산하기 위한 배열
+        pan = new int[row + 1][column + 1]; // 주사위 굴린 횟수를 계산하기 위한 배열. 게임판 1,1 방문시 pan[1][1]에 +1 기록
         numberSnake = (row * column) / 20; // 전체 크기의 5% 만큼 뱀 생성
         numberLadder = (row * column) / 20; // 전체 크기의 5% 만큼 뱀 생성
         int now_position_x = 0; // 현재 말의 x 위치
@@ -28,7 +28,7 @@ public class test1 {
         int a  = 1;  // [test code]
 
 
-        long MethodStartTime = System.nanoTime(); // [test code] 뱀, 사다리 생성시간 측정 
+        long MethodStartTime = System.nanoTime(); // [test code] 뱀, 사다리 생성시간 측정
         makeSnakePosition(); // 뱀 무작위 위치 생성
         makeLadderPosition(); // 사다리 무작위 위치 생성
         long MethodEndTime = System.nanoTime(); // [test code] 뱀, 사다리 생성시간 측정
@@ -37,7 +37,7 @@ public class test1 {
         long WhileStartTime = System.nanoTime(); // [test code] 주사위 던지는 반복문 시간 측정
         while (now_position_y != row+1) { // 현재 말의 y 위치가 최대 세로 길이를 초과하는 경우
             int dice = (int) (Math.random()*6+1); // 1~6 사이의 주사위 굴리기
-            System.out.println("!!!!!!!"+a+"번째 게임!!!!!!!");
+            System.out.println("!!!!!!!"+a+"번째 게임!!!!!!!"); // [test code]
             System.out.println("주사위 눈 : " + dice);
             a++; // [test code]
 
@@ -78,7 +78,7 @@ public class test1 {
             if (foundSnake) {
                 System.out.println("[뱀 발견] " + "y 좌표 : " + now_position_y + ", x 좌표 : " + now_position_x+ "   ---->   ");
 
-                if (now_position_y != 1 && now_position_x - 1 == 0) { // y == 1이지 않고 x-1 == 0)일 때
+                if (now_position_y != 1 && now_position_x - 1 == 0) { // 뱀이 (1,1)에 있을 경우를 제외하고 (2,1), (3,1), ...(row, 1) 경우
                     now_position_y--; // 한 줄 내려감
                     now_position_x = column; // x 좌표를 마지막으로 이동
                 } else {
@@ -154,5 +154,4 @@ public class test1 {
         }
     }
 }
-
 
