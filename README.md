@@ -27,7 +27,7 @@ Commit 메세지
 
 ### Commit Type Rule
 
-🪛[chore]: 코드 수정, 내부 파일 수정
+✅[chore]: 코드 수정, 내부 파일 수정
 
 ✨[feat]: 새로운 기능 구현
 
