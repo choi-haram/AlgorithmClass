@@ -1,10 +1,9 @@
+// 최종 3차 테스트 코드
 package last_nano_test;
-
-// 최종 3차 코드
 
 import java.util.Scanner;
 
-public class test3 {
+public class TestSnakeAndLadderGame3 {
     static long StartTime = System.nanoTime(); // 클래스 시간 측정
     static int len;
     static int numberSnake;
@@ -35,7 +34,7 @@ public class test3 {
         long WhileStartTime = System.nanoTime(); // [test code] 주사위 던지는 반복문 시간 측정
         while (now_position_y != len+1) { // 현재 말의 y 위치가 최대 세로 길이를 초과하는 경우
             int dice = (int) (Math.random()*6+1); // 1~6 사이의 주사위 굴리기
-            System.out.println("!!!!!!!"+a+"번째 게임!!!!!!!");
+            System.out.println("!!!!!!!"+a+"번째 게임!!!!!!!"); // [test code]
             System.out.println("주사위 눈 : " + dice);
             a++; // [test code]
 
