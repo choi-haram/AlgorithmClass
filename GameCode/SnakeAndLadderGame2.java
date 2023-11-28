@@ -24,7 +24,7 @@ public class SnakeAndLadderGame2 {
         numberSnake = (row * column) / 20; // 전체 크기의 5% 만큼 뱀 생성
         numberLadder = (row * column) / 20; // 전체 크기의 5% 만큼 사다리 생성
 
-        pan = new int[row + 1][column + 1]; // 주사위 굴린 횟수를 계산하기 위한 배열
+        pan = new int[row + 1][column + 1]; // 주사위 굴린 횟수를 계산하기 위한 배열. 게임판 1,1 방문시 pan[1][1]에 +1 기록
         snake_position = new boolean[row + 1][column + 1]; // 뱀 위치 배열
         snake_prohibit_position = new boolean[row + 1][column + 1]; // 뱀 생성 불가능 한 위치 배열
         ladder_position = new boolean[row + 1][column + 1]; // 사다리 위치 배열
