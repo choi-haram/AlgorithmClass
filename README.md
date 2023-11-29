@@ -9,14 +9,20 @@ An algorithm class at Andong University
 <b>팀원</b> : 김조은, 정가영, 최민정, 최하람<br>
 <b>기간</b> : 23.09.03 ~ 11.21
 
-## 실행환경
-- Window10
-- intelliJ IDEA 2023.1.2
-
-
 ## 개선기준
 <b>1. 메모리 사용량</b><br>
 <b>2. 수행시간</b>
+
+
+## 테스트환경
+- OS : Window10 Pro 22H2
+- Processer : Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz   3.60 GHz
+- RAM : 16GB
+- IDE : intelliJ IDEA 2023.1.2
+
+## 테스트 내용
+
+
 
 ### Commit Subject  Rule
 
