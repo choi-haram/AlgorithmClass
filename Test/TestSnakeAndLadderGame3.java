@@ -97,7 +97,7 @@ public class TestSnakeAndLadderGame3 {
     }
 
     public static void makeLadderPosition(){ // 사다리 위치 랜덤 생성 함수
-        for(int i=0; i<numberSnake; i++){ // 총 공간에서 5%의 뱀을 생성
+        for(int i=0; i<numberLadder; i++){ // 총 공간에서 5%의 사다리를 생성
             int n = (int) (Math.random()*len*len+1); // 1 ~  (가로*세로) 사이의 무작위 값
 
             if(snake_position[n]==1 || ladder_position[n]==1 || ladder_position[n]==2){
